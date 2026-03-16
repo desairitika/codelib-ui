@@ -1,0 +1,62 @@
+.commentsSection {
+  margin-top: 2rem;
+  border-top: 1px solid #ddd;
+  padding-top: 1rem;
+}
+
+.header {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.noComments {
+  color: #666;
+  font-style: italic;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.comment {
+  background: #fafafa;
+  padding: 0.75rem;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.author {
+  font-weight: 600;
+}
+
+.time {
+  font-style: italic;
+}
+
+.content {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.addComment textarea {
+  width: 100%;
+  min-height: 80px;
+  resize: vertical;
+}
+
+.loginPrompt {
+  color: #999;
+  margin-top: 1rem;
+  font-style: italic;
+}

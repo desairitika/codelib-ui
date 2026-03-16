@@ -1,0 +1,116 @@
+.header {
+  height: 100px;
+  width: 100%;
+  align-items: baseline !important;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+}
+
+.imageContainer {
+  margin-top: -50px;
+  position: relative;
+  overflow: hidden;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  border: 1px solid darkgrey;
+}
+
+.image {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  object-fit: "cover";
+  transition: "opacity 0.5s ease-in-out";
+}
+
+.image:hover + .changeImage {
+  display: flex;
+}
+
+.changeImage {
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 30%;
+  width: 100%;
+  bottom: 0;
+  background-color: rgba(80, 80, 80, 0.3) !important;
+  animation-name: move;
+  animation-duration: 0.2s;
+  cursor: pointer;
+  &:hover {
+    display: flex;
+  }
+}
+
+@keyframes move {
+  0% {
+    bottom: -50px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+.mainContent {
+  margin-top: 10px;
+  max-height: 60vh;
+  overflow: auto;
+}
+
+.close-button {
+  outline: none;
+  border: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-radius: 15%;
+  margin: 2px;
+  background-color: rgba(255, 255, 255, 0.5);
+  &:hover {
+    background-color: brown;
+    color: white;
+  }
+}
+
+.op-button {
+  font-size: 10px !important;
+  border-radius: 5px !important;
+  margin: 5px !important;
+  background-color: white !important;
+  color: black !important;
+  padding: 0 5px !important;
+  width: fit-content;
+  &:hover {
+    background-color: gray;
+  }
+}
+
+.cover-upload {
+  position: absolute !important;
+  right: 0 !important;
+  bottom: 0 !important;
+}
+
+.profile-menu {
+  position: absolute !important;
+  right: 0 !important;
+  top: 0 !important;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  @media (min-width: 480px) {
+    flex-direction: row;
+  }
+}
+
+.profileInfo{
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 992px) {
+    flex-direction: row;
+  }
+}

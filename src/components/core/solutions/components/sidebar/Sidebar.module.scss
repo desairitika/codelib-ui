@@ -1,0 +1,88 @@
+.sidebarCollapsed {
+  width: 60px;
+  height: 100vh;
+  background-color: #202123;
+  color: #fff;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease;
+  overflow: hidden;
+}
+
+.sidebarExpanded {
+  width: 400px;
+  height: 100vh;
+  background-color: #202123;
+  color: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(-100%);
+  transition: transform 0.4s cubic-bezier(.4,0,.2,1), width 0.3s cubic-bezier(.4,0,.2,1);
+  z-index: 1200;
+  overflow-y: auto;
+}
+
+.toggleContainer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+.toggleButton {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.sidebarMenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 20px;
+}
+
+.sidebarMenu li {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.sidebarMenu li:hover {
+  background-color: #333;
+}
+
+.icon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.sidebarMenu span {
+  font-size: 16px;
+}
+
+.sidebarCollapsed .icon {
+  margin-right: 0;
+}
+
+.sidebarOpen {
+  transform: translateX(0);
+}
+
+.sidebarBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.4);
+  z-index: 1199;
+  transition: opacity 0.3s cubic-bezier(.4,0,.2,1);
+}

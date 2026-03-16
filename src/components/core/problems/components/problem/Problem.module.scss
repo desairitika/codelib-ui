@@ -1,0 +1,67 @@
+.title{
+  &:hover{
+    color: steelblue !important;
+  }
+}
+
+.actionRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.actions {
+  display: flex;
+  align-self: flex-end;
+  justify-content: end;
+  min-width: 30%;
+  gap: 5px;
+  // margin-top: 10px;
+}
+
+.menuBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 5px;
+  border: none;
+  padding: 0;
+  margin: 0;
+  button{
+    border: none;
+    padding: 0;
+    background: transparent !important;
+    .dropdown-toggle::after {
+      display: none !important;
+    }
+  }
+  div{
+    width: 100px !important;
+    min-width: 100px !important;
+    inset: 0px 10px auto auto !important;
+  }
+}
+
+.solutionCount {
+  font-size: 13px;
+  font-weight: 500;
+  color: #555;
+  background: #eef;
+  padding: 2px 6px;
+  border-radius: 12px;
+}
+
+@media (max-width: 720px) {
+  .actionRow {
+    flex-direction: column;
+  }
+
+  .tags {
+    align-self: baseline;
+  }
+
+  .actions {
+    align-self: flex-end;
+  }
+}

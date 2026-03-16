@@ -1,0 +1,121 @@
+.userManagementContainer {
+  padding: 40px 20px;
+  min-height: calc(100vh - 200px);
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+      color: #333;
+    }
+  }
+
+  .addBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .tableWrapper {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 30px;
+
+    table {
+      margin-bottom: 0;
+
+      thead {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        
+        th {
+          color: white;
+          font-weight: 600;
+          border: none;
+          padding: 15px;
+        }
+      }
+
+      tbody {
+        tr {
+          &:hover {
+            background-color: #f8f9fa;
+          }
+
+          td {
+            padding: 15px;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+  }
+
+  .actionButtons {
+    display: flex;
+    gap: 8px;
+
+    button {
+      padding: 5px 8px;
+      font-size: 14px;
+    }
+  }
+
+  .role-user {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .role-admin {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .role-moderator {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .pagination {
+    justify-content: center;
+    margin-top: 20px;
+    gap: 5px;
+
+    .page-item {
+      &.active .page-link {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-color: #667eea;
+      }
+
+      .page-link {
+        color: #667eea;
+        border: 1px solid #ddd;
+        transition: all 0.3s ease;
+
+        &:hover:not(.disabled) {
+          background-color: #667eea;
+          color: white;
+          border-color: #667eea;
+        }
+      }
+    }
+  }
+}

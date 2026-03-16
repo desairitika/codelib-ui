@@ -1,0 +1,33 @@
+@import "./variables.scss";
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
+
+input[type="password"]::-webkit-credentials-auto-fill-button {
+  visibility: hidden;
+  display: none !important;
+  -webkit-appearance: none;
+}
+
+.navbar .navbar-nav .dropdown-menu {
+  position: absolute !important;
+}
+
+.main-outlet-min-height {
+  min-height: var(--main-outlet-height);
+}
+
+.main-outlet-max-height {
+  max-height: var(--main-outlet-height);
+}
+
+.main-outlet-height {
+  @extend .main-outlet-min-height;
+  @extend .main-outlet-max-height;
+}
+
+// .MuiChip-root{
+//   height: 16px !important;
+// }

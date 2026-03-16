@@ -1,0 +1,15 @@
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(200, 20%, 80%);
+  }
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+}
+
+.skeletonBox {
+  animation: skeleton-loading 1s linear infinite alternate;
+  height: 120px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}

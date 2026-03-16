@@ -1,0 +1,78 @@
+@import "@styles/styles.scss";
+
+.playgroundContainer {
+  height: var(--main-outlet-height);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #1e1e1e;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
+.playgroundToolbar {
+  padding: 10px;
+  background: #2c2c2c;
+  display: flex;
+  justify-content: space-between;
+}
+
+.playgroundSelect {
+  background-color: #2e2e2e;
+  color: #fff;
+  border: 1px solid #555;
+  border-radius: 4px;
+  padding: 6px 10px;
+}
+
+.playgroundRunButton {
+  padding: 8px 20px;
+  background-color: #0984e3;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.playgroundMain {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.playgroundEditor {
+  min-height: 100px;
+}
+
+.playgroundResizer {
+  height: 6px;
+  background: #444;
+  cursor: row-resize;
+  user-select: none;
+}
+
+.playgroundOutput {
+  background-color: #1e1e1e;
+  color: #dcdcdc;
+  overflow-y: auto;
+  padding: 12px;
+  position: relative;
+}
+
+.playgroundCloseButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #444;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+.playgroundOutput pre {
+  margin-top: 8px;
+  white-space: pre-wrap;
+}

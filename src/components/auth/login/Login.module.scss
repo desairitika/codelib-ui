@@ -1,0 +1,24 @@
+.loginContainer {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../../../assets/images/code.jpg');
+}
+
+.loginCard {
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.loginTitle {
+  color: #333;
+}
+
+.loginButton {
+  margin-top: 1rem;
+}
+
+.forgetButton{
+  cursor: pointer;
+}

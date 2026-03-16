@@ -1,0 +1,178 @@
+.categorySection {
+  margin-bottom: 2rem;
+}
+
+.sectionTitle {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--primary-color, #333);
+  text-align: center;
+}
+
+.backgroundBlend {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 8px;
+  padding: 20px 10px;
+  overflow-x: hidden; /* ensure slider overflow doesn't trigger scrollbars */
+}
+
+.slickContainer {
+  width: 100%;
+}
+
+.carousel {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden; /* hide slick's inner width leak that can cause scrollbars */
+  position: relative; /* allow absolute arrows */
+  padding: 0 48px; /* space for arrows */
+
+  .slick-slide {
+    padding: 10px;
+  }
+}
+
+.dashboardBoxCarousel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 140px;
+  text-align: center;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+    h3 {
+      margin: 0 0 8px 0;
+      font-size: 16px;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 100%;
+    }
+
+    p {
+      margin: 0;
+      font-size: 28px;
+      font-weight: bold;
+    }
+  }
+}
+
+.arrow {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  z-index: 2;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.prevArrow {
+  left: 12px !important;
+}
+
+.nextArrow {
+  right: 12px !important;
+}
+
+/* Hide slick's default pseudo arrows when present (avoid double markers) */
+.slick-prev:before, .slick-next:before {
+  display: none !important;
+}
+
+/* Make individual card a fixed-size block so slides align */
+.dashboardBoxCarousel {
+  flex: 0 0 auto !important;
+}
+
+/* Ensure slick list/track don't add unexpected margins */
+.carousel .slick-list {
+  overflow: hidden;
+  margin: 0;
+}
+
+.carousel .slick-track {
+  display: flex !important;
+  align-items: stretch !important;
+}
+
+.carousel .slick-slide {
+  display: flex !important;
+  align-items: stretch !important;
+  padding: 10px;
+}
+
+.carousel .slick-slide > div {
+  box-sizing: border-box;
+  display: flex !important;
+  align-items: stretch !important;
+  width: 100%;
+}
+
+/* mobile: hide arrows and rely on touch/dots */
+@media (max-width: 600px) {
+  .arrow, .prevArrow, .nextArrow {
+    display: none !important;
+  }
+  .carousel { padding: 0 8px; }
+}
+
+.viewAllWrapper {
+  text-align: center;
+  margin-top: 12px;
+}
+
+.viewAllButton {
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.viewAllButton:hover {
+  background: var(--primary-color);
+  color: #fff;
+}
+
