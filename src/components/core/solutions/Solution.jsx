@@ -14,6 +14,8 @@ import {
   updateSolution,
 } from "@services/solutionService";
 
+import { getProblemSolvers } from "@services/problemService";
+
 import { useToast } from "../../../hooks/useToast";
 
 const Solution = () => {
@@ -34,6 +36,7 @@ const Solution = () => {
   const [commentRefresh, setCommentRefresh] = useState(0);
 
   const [commentsOpen, setCommentsOpen] = useState(false);
+  const [solvers, setSolvers] = useState([]);
 
   const fetchSolution = async (id) => {
     setLoading(true);
@@ -70,6 +73,15 @@ const Solution = () => {
       setSolutionMap({});
       setCode("");
       setLoading(false);
+    }
+    
+    // Fetch solvers
+    if (selectedProblem?._id) {
+      getProblemSolvers(selectedProblem._id).then(res => {
+        if(res.code === 200) setSolvers(res.data);
+      }).catch(err => console.error("Failed to load solvers", err));
+    } else {
+      setSolvers([]);
     }
   }, [selectedProblem]);
 
@@ -144,6 +156,13 @@ const Solution = () => {
                 </button>
               </div>
             </div>
+
+            {solvers.length > 0 && (
+              <div className={styles.solversSection} style={{ marginTop: "10px", fontSize: "0.9rem", color: "#888" }}>
+                <strong>Solved by: </strong>
+                {solvers.map(u => u.username || u.name).join(", ")}
+              </div>
+            )}
 
             {selectedProblem.tags?.length > 0 && (
               <div className={styles.tags}>

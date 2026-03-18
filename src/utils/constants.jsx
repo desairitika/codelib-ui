@@ -8,6 +8,7 @@ import { GrGraphQl } from "react-icons/gr";
 import { MdDynamicFeed } from "react-icons/md";
 import { LiaSlackHash } from "react-icons/lia";
 import { FaCode } from "react-icons/fa";
+import { MdOutlineQueue } from "react-icons/md";
 
 export const updateConstants = (data) => {
   const updatedCategories = [];
@@ -46,6 +47,7 @@ export const iconMap = {
   MdDynamicFeed: <MdDynamicFeed />,
   LiaSlackHash: <LiaSlackHash />,
   FaCode: <FaCode />,
+  MdOutlineQueue: <MdOutlineQueue />,
 };
 
 // provide a default palette for category cards; this is used by the carousel component

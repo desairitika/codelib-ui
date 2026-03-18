@@ -65,21 +65,25 @@ const CommentsSection = ({ solutionId, refreshFlag }) => {
       </div>
 
       {user ? (
-        <div className={styles.addComment}>
-          <textarea
-            value={newComment}
-            onChange={(e) => setNewComment(e.target.value)}
-            placeholder="Write a comment..."
-            className="form-control"
-          />
-          <button
-            className="btn btn-primary btn-sm mt-1"
-            onClick={handleSubmit}
-            disabled={!newComment.trim()}
-          >
-            Post
-          </button>
-        </div>
+        solutionId ? (
+          <div className={styles.addComment}>
+            <textarea
+              value={newComment}
+              onChange={(e) => setNewComment(e.target.value)}
+              placeholder="Write a comment..."
+              className="form-control"
+            />
+            <button
+              className="btn btn-primary btn-sm mt-1"
+              onClick={handleSubmit}
+              disabled={!newComment.trim()}
+            >
+              Post
+            </button>
+          </div>
+        ) : (
+          <p className={styles.loginPrompt}>Please save your solution first to enable comments.</p>
+        )
       ) : (
         <p className={styles.loginPrompt}>Log in to post a comment</p>
       )}

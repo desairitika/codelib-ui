@@ -4,6 +4,12 @@ const problemsUrl = "/api/v1/problems/";
 
 export const cancelToken = createCancelTokenSource;
 
+export const getProblemSolvers = async (problemId, cancelToken) => {
+  return http.get(`/api/v1/problems/${problemId}/solvers`, {
+    ...(cancelToken && { cancelToken: cancelToken.token }),
+  });
+};
+
 export const createProblem = async (payload, cancelToken) => {
   return http.post(problemsUrl, payload, {
     ...(cancelToken && { cancelToken: cancelToken.token }),
