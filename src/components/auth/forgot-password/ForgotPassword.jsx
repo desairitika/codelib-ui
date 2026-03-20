@@ -25,9 +25,9 @@ const ForgotPasswordReset = () => {
   useEffect(() => {
     if (error) {
       setMessage("");
-      if (step === "forgot") setFormError("Failed to send email.");
-      else setFormError("Invalid or expired OTP.");
-      setToast(error, "Error");
+      const errMsg = typeof error === 'string' ? error : (error?.error || "Something went wrong.");
+      setFormError(errMsg);
+      setToast(errMsg, "Error");
       dispatch(reset());
     }
 
@@ -35,13 +35,15 @@ const ForgotPasswordReset = () => {
       setStep("reset");
       setFormError("");
       setMessage("Email sent. Check your inbox for password reset instructions.");
-      resetForm();
+      resetForm(false); // Keep email — it's needed for OTP verification
     }
 
     if (resetDone) {
       setFormError("");
-      setMessage("Password reset successfully.");
-      resetForm();
+      setMessage("Password reset successfully. Redirecting to login...");
+      resetForm(true);
+      dispatch(reset());
+      setTimeout(() => navigate("/login"), 2000);
     }
   }, [dispatch, error, resetDone, emailSent, step]);
 
@@ -86,8 +88,8 @@ const ForgotPasswordReset = () => {
     setMessage("");
   };
 
-  const resetForm = () => {
-    setEmail("");
+  const resetForm = (clearEmail = false) => {
+    if (clearEmail) setEmail("");
     setOtp("");
     setNewPassword("");
     setConfirmPassword("");
@@ -112,8 +114,8 @@ const ForgotPasswordReset = () => {
                 ) : (
                   <>
                     <Form.Group className="mb-3" controlId="formToken">
-                      <Form.Label>Token</Form.Label>
-                      <Form.Control type="text" placeholder="Enter token" value={otp} onChange={(e) => setOtp(e.target.value)} required />
+                      <Form.Label>OTP</Form.Label>
+                      <Form.Control type="text" placeholder="Enter OTP" value={otp} onChange={(e) => setOtp(e.target.value)} required />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formNewPassword">
                       <Form.Label>New Password</Form.Label>

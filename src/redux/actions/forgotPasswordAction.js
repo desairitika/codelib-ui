@@ -48,14 +48,13 @@ export const forgetAction = (payload) => async (dispatch) => {
 };
 
 export const resetAction = (payload) => async (dispatch) => {
-  dispatch(forgotRequest());
+  dispatch(resetRequest());
   try {
     const res = await resetPassword(payload);
-    if (res) {
+    if (res && res.success) {
       dispatch(resetSuccess(res));
-      dispatch(reset())
     } else {
-      dispatch(resetFailure({ error: "Something went wrong!!" }));
+      dispatch(resetFailure(res?.error || "Something went wrong!!"));
     }
   } catch (error) {
     dispatch(resetFailure(error.response?.data?.error ? error.response?.data?.error : error.message));
